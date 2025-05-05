@@ -1,0 +1,45 @@
+Terraform architecture:
+
+1 Region
+2 Availability Zones
+1 VPC
+1 Public Subnet per AZ (Web Tier)
+1 Private Subnet per AZ (App Tier)
+1 Private Subnet per AZ (DB Tier)
+
+Internet Gateway
+
+Internet Gateway Attachment to VPC
+
+Nat Gateway in Each Public Subnet
+
+Route Tables per Public/Private Subnet
+
+Routes for IGW & NAT GW
+
+Auto Scaling Group for FE and BE EC2 instances
+
+Launch Templates
+
+Application Load Balancer 
+- Public for Web / FE
+- Private for APP / BE
+
+HTTP/HTTPs Listeners
+
+ALB Listener Rules
+
+Target groups for ASG 
+
+EC2
+- Network config
+- PIP
+- SSH Key-Pair
+- AMI
+- Instance Type
+- EBS Config
+- NSG Config
+- Metadata
+- Tags
+
+RDS
